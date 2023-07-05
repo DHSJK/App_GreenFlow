@@ -1,0 +1,87 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-button color="success" slot="start">
+      
+        <ion-back-button defaultHref="/productos"></ion-back-button>
+      
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <div class="glass-content ion-padding">
+    <!-- ============ CARGANDO ===========-->
+    <div *ngIf="!producto" class="loader">
+      <ion-spinner name="crescent"></ion-spinner>
+    </div>
+
+    <!-- ============ INFORMACIÓN ===========-->
+    <div class="ion-text-center  ion-padding-top" *ngIf="producto">
+    <div class="d-flex-center"  size-lg="4" size-md="4" size-sm="4" size="12">
+      <ion-avatar>
+        <img  [src]="producto.IMAGEN" />
+      </ion-avatar>
+    </div>
+      <h1>Nombre: <strong>{{producto?.NOMBRE_SOCIAL}}</strong></h1>
+    
+      <ion-item lines="none">
+        <ion-icon slot="start" name="clipboard-outline"></ion-icon>
+        <ion-label>Nombre Científico: <br> <strong>{{producto.NOMBRE_CIENTIFICO}}</strong></ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="calendar-number-outline" ></ion-icon>
+        <ion-label >Temporada: <br> <strong class="ion-text-wrap"> {{producto.TEMPORADA}}</strong></ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="location-outline"></ion-icon>
+        <ion-label >Origen: <br> <strong>{{producto.ORIGEN}}</strong></ion-label>
+      </ion-item>
+
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="bookmark-outline"></ion-icon>
+        <ion-label>Categoria: <br> <strong>{{producto.CATEGORIA}}</strong></ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="timer-outline"></ion-icon>
+        <ion-label>Duración Refrigerada: <br> <strong>{{producto.DURACION}}</strong></ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="navigate-outline"></ion-icon>
+        <ion-label>Zona: <br> <strong>{{producto.ZONA}}</strong></ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="cube-outline"></ion-icon>
+        <ion-label>Tamaño: <br> <strong>{{producto.TAMANO}}</strong></ion-label>
+      </ion-item>
+
+      <!-- Para calendario -->
+      <!-- <div>
+        <ion-datetime></ion-datetime>
+      </div> -->
+    
+
+
+
+      <ion-button  (click)="addFavorito()" color="warning" expand="block" shape="round" >
+        <ion-icon name="star"></ion-icon>
+        Agregar a favorito.
+      </ion-button>
+      <ion-button (click)="eliminarFavorito(nombreSocial)" color="danger" expand="block" shape="round">
+        <ion-icon name="trash"></ion-icon>
+        Eliminar de Favoritos
+      </ion-button>
+      <br>
+
+      <br>
+
+      
+    </div>
+  </div>
+
+</ion-content>

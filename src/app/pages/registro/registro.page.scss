@@ -1,0 +1,25 @@
+ion-content{
+
+    //--ion-background-color:rgb(34,193,195);
+    
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(0,0,0,1) 100%);
+    
+}
+
+
+
+.test {
+	--placeholder-color: blue;
+	--color: rgb(37, 107, 50);
+}
+
+.test .texto::placeholder {
+    font-size: 10px;
+}
+
+.borde{
+    border: 2px solid #0d5523;
+    margin: 10px auto;
+    border-radius: 15px !important;
+}

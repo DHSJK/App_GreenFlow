@@ -1,0 +1,85 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-content class="ion-padding">
+      <ion-menu-toggle>
+        <ion-button color="success" (click)="homeProductos()" expand="block" fill="solid" shape="round">
+          Home
+        </ion-button>
+        <ion-button color="tertiary" (click)="cambiarContrasena()" expand="block" fill="solid" shape="round">
+          Cambiar Contraseña
+        </ion-button>
+        <ion-button color="medium" (click)="delete()" expand="block" fill="solid" shape="round">
+          Darse de Baja
+        </ion-button>
+        <ion-button color="danger" (click)="cerrarSesion()" expand="block" fill="solid" shape="round">
+          Cerrar Sesión
+        </ion-button>
+
+      </ion-menu-toggle>
+    </ion-content>
+    
+  </ion-content>
+  
+</ion-menu>
+
+<ion-content id="main-content" mode="ios">
+  <div class="glass-content">
+    <ion-header mode="md">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="openMenu()">
+            <ion-icon slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>
+          <div class="version">Green Flow</div>
+          <strong>Favoritos</strong>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+      <ion-grid>
+
+      <ion-row>
+        <ion-col class="d-flex-center" size="12">
+
+          <!-- <ion-searchbar placeholder="Buscar..." [(ngModel)]="params.NOMBRE_SOCIAL" (ionInput)="searchProducto()" [debounce]="250" ></ion-searchbar> -->
+
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col routerLinkActive="router-link-active"  *ngFor="let p of favorito" (click)="navigateToDestinationPage(p.id)" size-lg="6" size-md="6" size-sm="12" size="12">
+            <ion-card>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-padding" size-lg="4" size-md="4" size-sm="4" size="12">
+                    <ion-avatar>
+                      <img [src]="p.imagen" />
+                    </ion-avatar>
+                  </ion-col>
+                  <ion-col class="ion-padding" size-lg="8" size-md="8" size-sm="8" size="12">
+                    <div>Nombre: {{p.nombreSocial}}</div>
+                    
+                    <p>Categoria: <br> <strong>{{p.categoria}}</strong></p>
+                    <p>Temporada: <br> <strong>{{p.temporada}}</strong></p>
+                    <p>Origen: <br> <strong>{{p.origen}}</strong></p>
+                    <!-- <p>Duración: <br> <strong>{{p.DURACION}}</strong></p> -->
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+
+    </div>
+  </ion-content>
+

@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>testdb</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">testdb</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <ion-button (click)="setValue()" expand="block" fill="clear" shape="round">
+      Set Value
+    </ion-button>
+    <ion-button (click)="setValue2()" expand="block" fill="clear" shape="round">
+      Set Value2
+    </ion-button>
+    <ion-button (click)="getValue()" expand="block" fill="clear" shape="round">
+      Get Value
+    </ion-button>
+    <ion-button (click)="removeValue()" expand="block" fill="clear" shape="round">
+      Remove
+    </ion-button>
+    <ion-button (click)="clearStorage()" expand="block" fill="clear" shape="round">
+      Clear
+    </ion-button>
+    <!-- <ion-button (click)="setFavorito1()" expand="block" fill="clear" shape="round">
+      Favorito 1
+    </ion-button>
+    <ion-button (click)="setFavorito2()" expand="block" fill="clear" shape="round">
+      Favorito 2
+    </ion-button> -->
+    <ion-button (click)="allFavoritos()" expand="block" fill="clear" shape="round">
+      Obtener Favoritos
+    </ion-button>
+    <ion-button (click)="limpiar()" expand="block" fill="clear" shape="round">
+      NEW LIMPIAR Favoritos
+    </ion-button>
+<br>
+    <div>{{value}}</div>
+    <div>{{ciudad}}</div>
+  
+  </div>
+</ion-content>

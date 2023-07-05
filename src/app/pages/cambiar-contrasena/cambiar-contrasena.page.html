@@ -1,0 +1,47 @@
+  <ion-header>
+    <ion-toolbar class="degradado">
+      
+      <ion-title class="ion-text-center">Green Flow</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding" mode="ios">
+    <div class="ion-text-center ion-padding">
+      <ion-label class="titulo">Cambiar Contraseña de Usuario</ion-label>
+  
+      <ion-img src="assets/modificar_psw.svg"></ion-img>
+    </div>
+    <!-- INGRESO DE CORREO  -->
+<ion-item class="borde">
+  <ion-input label="Correo" label-placement="floating" 
+    placeholder="Ingrese Correo" [(ngModel)]="mdl_correo"
+    [required]="true">
+  </ion-input>
+</ion-item>
+
+<!-- INGRESO DE CONTRASEÑA NUEVA -->
+<ion-item class="borde">
+  <ion-input label="Contraseña nueva" label-placement="floating" 
+    placeholder="Ingrese contraseña nueva" [(ngModel)]="mdl_newcontra"
+    type="password" minlength="8">
+  </ion-input>
+</ion-item>
+
+<!-- INGRESO DE CONTRASEÑA  -->
+<ion-item class="borde">
+  <ion-input label="Contraseña antigua" label-placement="floating" 
+    placeholder="Ingrese contraseña actual" [(ngModel)]="mdl_oldcontra"
+    type="password" minlength="8">
+  </ion-input>
+</ion-item>
+
+    <ion-button expand="block" (click)="modificar()">
+      <ion-icon name="checkbox" slot="start"></ion-icon>
+      Cambiar 
+    </ion-button>
+    <ion-button routerLink="/productos" expand="block" ion-button color="secondary">
+      <ion-icon name="arrow-undo-outline" slot="start"></ion-icon>
+      Regresar
+    </ion-button>
+  </ion-content>
+  

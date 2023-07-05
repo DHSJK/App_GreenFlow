@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar class="degradado">
+    
+    <ion-title class="ion-text-center">Green Flow</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center ion-padding">
+    <ion-label class="titulo">Registro Nuevo Usuario</ion-label>
+
+  <ion-img src="assets/ic_register.svg"></ion-img>
+</div>
+
+<!-- INGRESO DE CORREO  -->
+<ion-item class="borde">
+  <ion-input label="Correo" label-placement="floating" 
+    placeholder="Ingrese Correo" [(ngModel)]="mdl_correo"
+    [required]="true">
+  </ion-input>
+</ion-item>
+
+<!-- INGRESO DE CONTRASEÑA  -->
+<ion-item class="borde">
+  <ion-input label="Contraseña" label-placement="floating" 
+    placeholder="Ingrese Contraseña" [(ngModel)]="mdl_contrasena"
+    type="password" minlength="8">
+  </ion-input>
+</ion-item>
+
+<!-- INGRESO DE NOMBRE -->
+<ion-item class="borde">
+  <ion-input label="Nombre" label-placement="floating" 
+    placeholder="Ingrese Nombre" [(ngModel)]="mdl_nombre">
+  </ion-input>
+</ion-item>
+
+<!-- INGRESO DE APELLIDO  -->
+<ion-item class="borde">
+  <ion-input label="Apellido" label-placement="floating" 
+    placeholder="Ingrese Apellido" [(ngModel)]="mdl_apellido">
+  </ion-input>
+</ion-item>
+
+  <ion-button class="degradado"  expand="block" (click)="registrar()">
+    <ion-icon name="save-outline" slot="start"></ion-icon>
+    Registrar</ion-button>
+  <hr>
+  <ion-button (click)="salir()" expand="block" ion-button color="danger">
+    <ion-icon name="arrow-undo-outline" slot="start"></ion-icon>
+    Regresar</ion-button>
+
+</ion-content>
